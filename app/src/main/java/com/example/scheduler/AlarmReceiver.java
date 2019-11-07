@@ -36,7 +36,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             while (c.moveToNext()) {
                 Scheduler cl = new Scheduler(Integer.parseInt(c.getString(0)),
                         Integer.parseInt(c.getString(1)),
-                        (long)Integer.parseInt(c.getString(2)),
+                        Long.parseLong(c.getString(2)),
                         (long)Integer.parseInt(c.getString(3)),
                         c.getString(1));
                 array.add(cl);

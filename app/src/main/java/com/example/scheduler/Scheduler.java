@@ -17,4 +17,15 @@ public class Scheduler {
 
     public Scheduler() {
     }
+
+    @Override
+    public String toString() {
+        return "Scheduler{" +
+                "id=" + id +
+                ", clientId=" + clientId +
+                ", time=" + time +
+                ", timeDifference=" + timeDifference +
+                ", location='" + location + '\'' +
+                '}';
+    }
 }

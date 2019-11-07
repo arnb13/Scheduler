@@ -7,6 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
+import static com.example.scheduler.DbSchedulersHelper.col_client_id;
+import static com.example.scheduler.DbSchedulersHelper.col_location;
+import static com.example.scheduler.DbSchedulersHelper.col_time;
+import static com.example.scheduler.DbSchedulersHelper.col_time_diff;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String dbName = "scheduler.db";
@@ -30,6 +35,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "address text," +
                 "company text," +
                 "designation text)";
+        db.execSQL(sql);
+
+        sql = "create table scheduler " +
+                "(id integer primary key autoincrement, " +
+                col_client_id+" integer," +
+                col_time + " integer," +
+                col_time_diff + " integer," +
+                col_location +" text)";
+
         db.execSQL(sql);
     }
 

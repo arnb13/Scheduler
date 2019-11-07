@@ -30,5 +30,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, AddSchedulers.class));
     }
 
-    public void viewMeeting(View v){}
+    public void viewMeeting(View v){
+        startActivity(new Intent(this, ShowMeeting.class));
+    }
 }

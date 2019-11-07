@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.icu.text.SimpleDateFormat;
 import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -70,6 +71,7 @@ public class AddSchedulers extends AppCompatActivity {
 
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ada);
             spinner.setAdapter(adapter);
+            selectedClient = clientList.get(0);
 
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -135,6 +137,7 @@ public class AddSchedulers extends AppCompatActivity {
             scheduler.time = calendar.getTimeInMillis();
             scheduler.timeDifference = timeSpinner * 60 * 1000;
 
+            Log.d("xyz", scheduler.toString());
 
             boolean success = new DbSchedulersHelper(this).insertData(scheduler.clientId,
                     scheduler.time, scheduler.location, scheduler.timeDifference);

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DbSchedulersHelper extends SQLiteOpenHelper {
-    public static final String dbName = "scheduler1.db";
+    public static final String dbName = "scheduler.db";
     public static final String tableName = "scheduler";
     public static final String col_id = "id";
     public static final String col_client_id = "client_id";

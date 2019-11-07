@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -47,11 +48,13 @@ public class ShowMeeting extends AppCompatActivity {
                 while (c.moveToNext()) {
                     Scheduler cl = new Scheduler(Integer.parseInt(c.getString(0)),
                             Integer.parseInt(c.getString(1)),
-                            (long)Integer.parseInt(c.getString(2)),
+                            (long)Long.parseLong(c.getString(2)),
                             (long)Integer.parseInt(c.getString(3)),
-                            c.getString(1));
+                            c.getString(4));
                     array.add(cl);
                 }
+
+                Log.d("xyz", array.toString());
 
                 //ArrayAdapter a = new ArrayAdapter(this, clientArrayList);
                 ScheduleListAdapter a = new ScheduleListAdapter(this,
