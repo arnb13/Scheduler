@@ -21,8 +21,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewClientIntent(View v) {
-        Intent intent = new Intent(this, View_Client.class);
+        Intent intent = new Intent(this, ViewClient.class);
         startActivityForResult(intent, 0);
 
     }
+
+    public void addMeeting(View v){
+        startActivity(new Intent(this, AddSchedulers.class));
+    }
+
+    public void viewMeeting(View v){}
 }

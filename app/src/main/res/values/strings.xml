@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Scheduler</string>
+    <array name="time">
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>30 min</item>
+    </array>
 </resources>

@@ -59,4 +59,15 @@ public class Client {
     public String getDesignation () {
         return designation;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", company='" + company + '\'' +
+                ", designation='" + designation + '\'' +
+                '}';
+    }
 }

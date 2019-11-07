@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AlarmShow"></activity>
+        <activity android:name=".ShowMeeting" />
+        <activity android:name=".AddSchedulers" />
         <activity android:name=".AddClient" />
-        <activity android:name=".View_Client" />
+        <activity android:name=".ViewClient" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

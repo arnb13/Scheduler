@@ -9,18 +9,31 @@
 
 
     <Button
-        android:id="@+id/button_add_client"
+        android:id="@+id/button_add_meeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#2196F3"
+        android:text="Add Meeting"
+        android:onClick="addMeeting"
+        app:layout_constraintBottom_toTopOf="@+id/button_show_meeting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_show_client" />
+
+    <Button
+        android:id="@+id/button_add_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="#2196F3"
         android:onClick="addClientIntent"
         android:text="Add Client"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_show_client"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_show_client"
@@ -29,12 +42,25 @@
         android:backgroundTint="#03A9F4"
         android:onClick="viewClientIntent"
         android:text="Show Client"
+        app:layout_constraintBottom_toTopOf="@+id/button_add_meeting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_add_client" />
+
+    <Button
+        android:id="@+id/button_show_meeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:backgroundTint="#2196F3"
+        android:text="Show Meeting"
+        android:onClick="viewMeeting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.619" />
+        app:layout_constraintTop_toBottomOf="@+id/button_add_meeting" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

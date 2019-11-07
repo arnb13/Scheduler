@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class ClientListAdapter extends ArrayAdapter <Client> {
     private Context mContext;
     int mResource;
-    ArrayList <Client> c = new ArrayList<>();
 
 
     public ClientListAdapter(Context context, int resource, @NonNull ArrayList <Client> objects) {

@@ -4,12 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class View_Client extends AppCompatActivity {
+public class ViewClient extends AppCompatActivity {
     DatabaseHelper db;
     ArrayList <Client> clientArrayList;
     ListView listView;
@@ -21,13 +20,10 @@ public class View_Client extends AppCompatActivity {
 
 
         db = new DatabaseHelper(this);
-        listView = (ListView) findViewById(R.id.listClient);
+        listView = (ListView) findViewById(R.id.listMeeting);
         clientArrayList = new ArrayList<>();
         viewClient();
 
-        //ArrayAdapter a = new ArrayAdapter(this, clientArrayList);
-        ClientListAdapter a = new ClientListAdapter(this, R.layout.activity_adapter_view, clientArrayList);
-        listView.setAdapter(a);
 
     }
 
@@ -35,8 +31,8 @@ public class View_Client extends AppCompatActivity {
         Cursor c = db.getAllData();
 
         if (c.getCount() != 0) {
-            Client cl = new Client();
             while (c.moveToNext()) {
+                Client cl = new Client();
                 cl.setId( Integer.parseInt(c.getString(0)));
                 cl.setName(c.getString(1));
                 cl.setAddress(c.getString(2));
@@ -45,6 +41,10 @@ public class View_Client extends AppCompatActivity {
                 clientArrayList.add(cl);
             }
 
+
+            //ArrayAdapter a = new ArrayAdapter(this, clientArrayList);
+            ClientListAdapter a = new ClientListAdapter(this, R.layout.activity_adapter_view, clientArrayList);
+            listView.setAdapter(a);
         } else {
 
         }
